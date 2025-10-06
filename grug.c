@@ -5258,7 +5258,7 @@ static size_t resources_size;
 static u32 entity_dependencies[MAX_ENTITY_DEPENDENCIES];
 static size_t entity_dependencies_size;
 
-static bool compiling_fast_mode;
+static bool compiling_unsafe_mode;
 
 static bool compiled_init_globals_fn;
 
@@ -5315,7 +5315,7 @@ static void reset_compiling(void) {
 	loop_depth = 0;
 	resources_size = 0;
 	entity_dependencies_size = 0;
-	compiling_fast_mode = false;
+	compiling_unsafe_mode = false;
 	compiled_init_globals_fn = false;
 	is_runtime_error_handler_used = false;
 	helper_fn_mode_names_size = 0;
@@ -5334,13 +5334,13 @@ static const char *get_helper_fn_mode_name(const char *name, bool safe) {
 	memcpy(helper_fn_mode_names + helper_fn_mode_names_size, name, length);
 	helper_fn_mode_names_size += length;
 
-	memcpy(helper_fn_mode_names + helper_fn_mode_names_size, safe ? "_safe" : "_fast", 6);
+	memcpy(helper_fn_mode_names + helper_fn_mode_names_size, safe ? "_safe" : "_unsafe", 6);
 	helper_fn_mode_names_size += 6;
 
 	return mode_name;
 }
 
-static const char *get_fast_helper_fn_name(const char *name) {
+static const char *get_unsafe_helper_fn_name(const char *name) {
 	return get_helper_fn_mode_name(name, false);
 }
 
@@ -5916,7 +5916,7 @@ static void compile_check_time_limit_exceeded(void) {
 
 static void compile_continue_statement(void) {
 	backend_assert(loop_depth > 0, "There is a continue statement that isn't inside of a while loop");
-	if (!compiling_fast_mode) {
+	if (!compiling_unsafe_mode) {
 		compile_check_time_limit_exceeded();
 	}
 	compile_unpadded(JMP_32_BIT_OFFSET);
@@ -6029,7 +6029,7 @@ static void compile_while_statement(struct while_statement while_statement) {
 
 	compile_statements(while_statement.body_statements, while_statement.body_statement_count);
 
-	if (!compiling_fast_mode) {
+	if (!compiling_unsafe_mode) {
 		compile_check_time_limit_exceeded();
 	}
 
@@ -6255,7 +6255,7 @@ static void compile_call_expr(struct call_expr call_expr) {
 	struct grug_game_function *game_fn = get_grug_game_fn(fn_name);
 
 	// Push every entity type into an array, so the linker can embed them in the shared library
-	if (!compiling_fast_mode) {
+	if (!compiling_unsafe_mode) {
 		struct argument *params = game_fn ? game_fn->arguments : helper_fn->arguments;
 		for (size_t i = 0; i < call_expr.argument_count; i++) {
 			struct argument param = params[i];
@@ -6273,7 +6273,7 @@ static void compile_call_expr(struct call_expr call_expr) {
 		push_game_fn_call(fn_name, codes_size);
 		returns_float = game_fn->return_type == type_f32;
 	} else if (helper_fn) {
-		push_helper_fn_call(get_helper_fn_mode_name(fn_name, !compiling_fast_mode), codes_size);
+		push_helper_fn_call(get_helper_fn_mode_name(fn_name, !compiling_unsafe_mode), codes_size);
 		returns_float = helper_fn->return_type == type_f32;
 	} else {
 		backend_unreachable();
@@ -6305,7 +6305,7 @@ static void compile_call_expr(struct call_expr call_expr) {
 		compile_unpadded(MOV_XMM0_TO_EAX);
 	}
 
-	if (!compiling_fast_mode) {
+	if (!compiling_unsafe_mode) {
 		if (calls_game_fn) {
 			compile_check_game_fn_error();
 		} else {
@@ -6367,7 +6367,7 @@ static void compile_binary_expr(struct expr expr) {
 			if (expr.result_type == type_i32) {
 				compile_unpadded(ADD_R11D_TO_EAX);
 
-				if (!compiling_fast_mode) {
+				if (!compiling_unsafe_mode) {
 					compile_check_overflow();
 				}
 			} else {
@@ -6381,7 +6381,7 @@ static void compile_binary_expr(struct expr expr) {
 			if (expr.result_type == type_i32) {
 				compile_unpadded(SUB_R11D_FROM_EAX);
 
-				if (!compiling_fast_mode) {
+				if (!compiling_unsafe_mode) {
 					compile_check_overflow();
 				}
 			} else {
@@ -6395,7 +6395,7 @@ static void compile_binary_expr(struct expr expr) {
 			if (expr.result_type == type_i32) {
 				compile_unpadded(IMUL_EAX_BY_R11D);
 
-				if (!compiling_fast_mode) {
+				if (!compiling_unsafe_mode) {
 					compile_check_overflow();
 				}
 			} else {
@@ -6407,7 +6407,7 @@ static void compile_binary_expr(struct expr expr) {
 			break;
 		case DIVISION_TOKEN:
 			if (expr.result_type == type_i32) {
-				if (!compiling_fast_mode) {
+				if (!compiling_unsafe_mode) {
 					compile_check_division_by_0();
 					compile_check_division_overflow();
 				}
@@ -6422,7 +6422,7 @@ static void compile_binary_expr(struct expr expr) {
 			}
 			break;
 		case REMAINDER_TOKEN:
-			if (!compiling_fast_mode) {
+			if (!compiling_unsafe_mode) {
 				compile_check_division_by_0();
 				compile_check_division_overflow();
 			}
@@ -6553,7 +6553,7 @@ static void compile_unary_expr(struct unary_expr unary_expr) {
 			if (unary_expr.expr->result_type == type_i32) {
 				compile_unpadded(NEGATE_EAX);
 
-				if (!compiling_fast_mode) {
+				if (!compiling_unsafe_mode) {
 					compile_check_overflow();
 				}
 			} else {
@@ -6677,7 +6677,7 @@ static void compile_expr(struct expr expr) {
 			string = push_entity_dependency_string(string);
 
 			// This check prevents the output entities array from containing duplicate entities
-			if (!compiling_fast_mode) {
+			if (!compiling_unsafe_mode) {
 				add_data_string(string);
 
 				// We can't do the same thing we do with RESOURCE_EXPR,
@@ -7143,10 +7143,10 @@ static void compile_on_fn_impl(const char *fn_name, struct argument *fn_argument
 
 	overwrite_jmp_address_32(skip_safe_code_offset, codes_size);
 
-	compiling_fast_mode = true;
+	compiling_unsafe_mode = true;
 	compile_statements(body_statements, body_statement_count);
 	assert(pushed == 0);
-	compiling_fast_mode = false;
+	compiling_unsafe_mode = false;
 
 	compile_function_epilogue();
 }
@@ -7166,7 +7166,7 @@ static void compile_helper_fn_impl(struct argument *fn_arguments, size_t argumen
 
 	move_arguments(fn_arguments, argument_count);
 
-	if (!compiling_fast_mode) {
+	if (!compiling_unsafe_mode) {
 		compile_check_stack_overflow();
 		compile_check_time_limit_exceeded();
 	}
@@ -7225,7 +7225,7 @@ static void compile_init_globals_fn(const char *grug_path) {
 
 	overwrite_jmp_address_32(skip_safe_code_offset, codes_size);
 
-	compiling_fast_mode = true;
+	compiling_unsafe_mode = true;
 	for (size_t i = 0; i < ast.global_variable_statements_size; i++) {
 		struct global_variable_statement global = ast.global_variable_statements[i];
 
@@ -7234,7 +7234,7 @@ static void compile_init_globals_fn(const char *grug_path) {
 		compile_global_variable_statement(global.name);
 	}
 	assert(pushed == 0);
-	compiling_fast_mode = false;
+	compiling_unsafe_mode = false;
 
 	compile_function_epilogue();
 
@@ -7270,13 +7270,13 @@ static void compile(const char *grug_path) {
 		text_offsets[text_offset_index++] = text_offset;
 		text_offset = codes_size;
 
-		// The same, but for fast mode:
+		// The same, but for unsafe mode:
 
-		push_helper_fn_offset(get_fast_helper_fn_name(fn.fn_name), codes_size);
+		push_helper_fn_offset(get_unsafe_helper_fn_name(fn.fn_name), codes_size);
 
-		compiling_fast_mode = true;
+		compiling_unsafe_mode = true;
 		compile_helper_fn(fn);
-		compiling_fast_mode = false;
+		compiling_unsafe_mode = false;
 
 		text_offsets[text_offset_index++] = text_offset;
 		text_offset = codes_size;
@@ -9031,7 +9031,7 @@ static void generate_shared_object(const char *dll_path) {
 
 	for (size_t i = 0; i < ast.helper_fns_size; i++) {
 		push_symbol(get_safe_helper_fn_name(ast.helper_fns[i].fn_name));
-		push_symbol(get_fast_helper_fn_name(ast.helper_fns[i].fn_name));
+		push_symbol(get_unsafe_helper_fn_name(ast.helper_fns[i].fn_name));
 	}
 
 	init_symbol_name_dynstr_offsets();
@@ -9984,7 +9984,7 @@ USED_BY_MODS bool grug_on_fns_in_safe_mode = true;
 void grug_set_on_fns_to_safe_mode(void) {
 	grug_on_fns_in_safe_mode = true;
 }
-void grug_set_on_fns_to_fast_mode(void) {
+void grug_set_on_fns_to_unsafe_mode(void) {
 	grug_on_fns_in_safe_mode = false;
 }
 bool grug_are_on_fns_in_safe_mode(void) {
