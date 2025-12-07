@@ -50,7 +50,7 @@
 
 //// INCLUDES AND DEFINES
 
-#define _XOPEN_SOURCE 700 // This is just so VS Code can find CLOCK_PROCESS_CPUTIME_ID
+#define _XOPEN_SOURCE 700 // This helps VS Code find CLOCK_PROCESS_CPUTIME_ID
 
 #include "grug.h"
 
@@ -1830,6 +1830,7 @@ static void tokenize(void) {
 
 #define INCREASE_PARSING_DEPTH() parsing_depth++; grug_assert(parsing_depth < MAX_PARSING_DEPTH, "There is a function that contains more than %d levels of nested expressions", MAX_PARSING_DEPTH)
 #define DECREASE_PARSING_DEPTH() assert(parsing_depth > 0); parsing_depth--
+
 static const char *get_expr_type_str[] = {
 	[TRUE_EXPR] = "TRUE_EXPR",
 	[FALSE_EXPR] = "FALSE_EXPR",
@@ -9373,33 +9374,6 @@ static void set_grug_error_path(const char *grug_path) {
 	assert(strlen(grug_path) + 1 <= sizeof(grug_error.path));
 
 	memcpy(grug_error.path, grug_path, strlen(grug_path) + 1);
-}
-
-// This function just exists for the grug-tests repository
-// It returns whether an error occurred
-USED_BY_PROGRAMS bool grug_test_regenerate(const char *grug_path, const char *mod_name);
-bool grug_test_regenerate(const char *grug_path, const char *mod_name) {
-	if (setjmp(error_jmp_buffer)) {
-		return true;
-	}
-
-	assert(is_grug_initialized && "You forgot to call grug_init() once at program startup");
-
-	mod = mod_name;
-
-	grug_loading_error_in_grug_file = false;
-
-	set_grug_error_path(grug_path);
-
-	const char *grug_filename = strrchr(grug_path, '/');
-	grug_assert(grug_filename, "The grug file path '%s' does not contain a '/' character", grug_path);
-	initialize_file_entity_type(grug_filename + 1);
-
-	regenerate(grug_path);
-
-	reset_previous_grug_error();
-
-	return false;
 }
 
 static void free_file(struct grug_file file) {
