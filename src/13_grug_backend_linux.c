@@ -4161,18 +4161,18 @@ static void generate_shared_object(const char *dll_path) {
 static char dll_root_dir_path[STUPID_MAX_PATH];
 static bool is_grug_backend_initialized = false;
 
-USED_BY_PROGRAMS bool grug_init_backend_linux(const char *dll_dir_path);
-bool grug_init_backend_linux(const char *dll_dir_path) {
+USED_BY_PROGRAMS bool grug_backend_linux_init(const char *dll_dir_path);
+bool grug_backend_linux_init(const char *dll_dir_path) {
 	if (setjmp(backend_error_jmp_buffer)) {
 		return true;
 	}
 
-	assert(!is_grug_backend_initialized && "grug_init_backend_linux() can't be called more than once");
+	assert(!is_grug_backend_initialized && "grug_backend_linux_init() can't be called more than once");
 
-	assert(!strchr(dll_dir_path, '\\') && "grug_init_backend_linux() its dll_dir_path can't contain backslashes, so replace them with '/'");
-	assert(dll_dir_path[strlen(dll_dir_path) - 1] != '/' && "grug_init_backend_linux() its dll_dir_path can't have a trailing '/'");
+	assert(!strchr(dll_dir_path, '\\') && "grug_backend_linux_init() its dll_dir_path can't contain backslashes, so replace them with '/'");
+	assert(dll_dir_path[strlen(dll_dir_path) - 1] != '/' && "grug_backend_linux_init() its dll_dir_path can't have a trailing '/'");
 
-	assert(strlen(dll_dir_path) + 1 <= STUPID_MAX_PATH && "grug_init_backend_linux() its dll_dir_path exceeds the maximum path length");
+	assert(strlen(dll_dir_path) + 1 <= STUPID_MAX_PATH && "grug_backend_linux_init() its dll_dir_path exceeds the maximum path length");
 	memcpy(dll_root_dir_path, dll_dir_path, strlen(dll_dir_path) + 1);
 
 	is_grug_backend_initialized = true;
@@ -4256,7 +4256,7 @@ static bool load(struct grug_ast *ast_) {
 		return true;
 	}
 
-	assert(is_grug_backend_initialized && "You forgot to call grug_init_backend_linux() once at program startup");
+	assert(is_grug_backend_initialized && "You forgot to call grug_backend_linux_init() once at program startup");
 
 	ast = *ast_;
 
