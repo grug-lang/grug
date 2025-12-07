@@ -1,6 +1,6 @@
 //// INCLUDES AND DEFINES
 
-#define _XOPEN_SOURCE 700 // This is just so VS Code can find CLOCK_PROCESS_CPUTIME_ID
+#define _XOPEN_SOURCE 700 // This helps VS Code find CLOCK_PROCESS_CPUTIME_ID
 
 #include "grug.h"
 

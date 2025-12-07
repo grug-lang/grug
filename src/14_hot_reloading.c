@@ -192,33 +192,6 @@ static void set_grug_error_path(const char *grug_path) {
 	memcpy(grug_error.path, grug_path, strlen(grug_path) + 1);
 }
 
-// This function just exists for the grug-tests repository
-// It returns whether an error occurred
-USED_BY_PROGRAMS bool grug_test_regenerate(const char *grug_path, const char *mod_name);
-bool grug_test_regenerate(const char *grug_path, const char *mod_name) {
-	if (setjmp(error_jmp_buffer)) {
-		return true;
-	}
-
-	assert(is_grug_initialized && "You forgot to call grug_init() once at program startup");
-
-	mod = mod_name;
-
-	grug_loading_error_in_grug_file = false;
-
-	set_grug_error_path(grug_path);
-
-	const char *grug_filename = strrchr(grug_path, '/');
-	grug_assert(grug_filename, "The grug file path '%s' does not contain a '/' character", grug_path);
-	initialize_file_entity_type(grug_filename + 1);
-
-	regenerate(grug_path);
-
-	reset_previous_grug_error();
-
-	return false;
-}
-
 static void free_file(struct grug_file file) {
 	free((void *)file.name);
 	free((void *)file.entity);
