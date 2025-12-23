@@ -774,7 +774,7 @@ USED_BY_MODS bool grug_on_fns_in_safe_mode = true;
 void grug_set_on_fns_to_safe_mode(void) {
 	grug_on_fns_in_safe_mode = true;
 }
-void grug_set_on_fns_to_fast_mode(void) {
+void grug_set_on_fns_to_unsafe_mode(void) {
 	grug_on_fns_in_safe_mode = false;
 }
 bool grug_are_on_fns_in_safe_mode(void) {

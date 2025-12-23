@@ -60,10 +60,10 @@ bool grug_generate_file_from_json(const char *input_json_path, const char *outpu
 bool grug_generate_mods_from_json(const char *input_json_path, const char *output_mods_path) __attribute__((warn_unused_result));
 
 // Safe mode is the default.
-// Safe mode is significantly slower than fast mode, but guarantees the program can't crash
+// Safe mode is significantly slower than unsafe mode, but guarantees the program can't crash
 // from grug mod runtime errors (division by 0/stack overflow/functions taking too long).
 void grug_set_on_fns_to_safe_mode(void);
-void grug_set_on_fns_to_fast_mode(void);
+void grug_set_on_fns_to_unsafe_mode(void);
 bool grug_are_on_fns_in_safe_mode(void) __attribute__((warn_unused_result));
 void grug_toggle_on_fns_mode(void);
 
