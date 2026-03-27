@@ -14,6 +14,13 @@ In VS Code, you can install the extension simply called `grug` to get syntax hig
 
 `grug.c` contains documentation at the top of the file, and the MIT license at the very bottom. `grug.h` refers to the MIT license in `grug.c`.
 
+## Getting Started
+
+Grug is designed to be a single-header-style library. To integrate it into your C project:
+1. Copy `grug.c` and `grug.h` into your project.
+2. Include `grug.h` in your source code.
+3. Refer to the **GRUG DOCUMENTATION** section at the top of `grug.c` for API usage details and initialization steps.
+
 ## Contributing
 
 Create an issue in [grug's GitHub repository](https://github.com/MyNameIsTrez/grug), before you make any pull request.
@@ -48,3 +55,7 @@ This gives everyone the chance to discuss it, and prevents your hard work from b
 - [terminal game: Python](https://github.com/MyNameIsTrez/grug-terminal-game-python)
 - [terminal game: Java](https://github.com/MyNameIsTrez/grug-terminal-game-java)
 - [grug benchmarks](https://github.com/MyNameIsTrez/grug-benchmarks)
+
+## License
+
+This project is licensed under the MIT License. See the bottom of `grug.c` for the full license text.
