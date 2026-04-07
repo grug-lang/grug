@@ -1,50 +1,37 @@
-# grug
+# grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.gg/https://discord.com/invite/ufeJ6MBXJG)
 
-[![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.gg/https://discord.com/invite/ufeJ6MBXJG)
+grug is a minimal, strongly-typed modding language designed for long-term compatibility and "immortal" mods across platforms, from modern systems down to the NES. It features a [small LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), no standard library, and a lossless JSON AST to enable automatic upgrading, downgrading, and cross-language transpilation. With hot reloading and full user override of backends and APIs, grug prioritizes portability, control, and permanence.
 
-See my YouTube video explaining and showcasing grug:
+See the YouTube video [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo) for an introduction to the grug modding language, or read [its blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html):
 
 [<img src="https://img.youtube.com/vi/4oUToVXR2Vo/maxresdefault.jpg" height="200">](https://youtu.be/4oUToVXR2Vo)
 
-See [my blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html) for an introduction to the grug modding language.
-
-You can find its test suite [here](https://github.com/MyNameIsTrez/grug-tests).
-
-In VS Code, you can install the extension simply called `grug` to get syntax highlighting and a grug file icon.
-
-`grug.c` contains documentation at the top of the file, and the MIT license at the very bottom. `grug.h` refers to the MIT license in `grug.c`.
+If you use VS Code, you can install the `grug` extension.
 
 ## Contributing
 
-Create an issue in [grug's GitHub repository](https://github.com/MyNameIsTrez/grug), before you make any pull request.
+Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
 
-This gives everyone the chance to discuss it, and prevents your hard work from being rejected.
+grug has an issues board, which can be filtered to for example list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue).
 
-## Sections
+## Showcases
 
-`grug.c` is composed of sections, which you can jump between by searching for `////` in the file:
+### Bindings
 
-1. GRUG DOCUMENTATION
-2. INCLUDES AND DEFINES
-3. UTILS
-4. RUNTIME ERROR HANDLING
-5. JSON
-6. PARSING MOD API JSON
-7. READING
-8. TOKENIZATION
-9. PARSING
-10. DUMPING AST
-11. APPLYING AST
-12. TYPE PROPAGATION
-13. COMPILING
-14. LINKING
-15. HOT RELOADING
+- [grug-for-python](https://github.com/grug-lang/grug-for-python)
+- [grug-for-c](https://github.com/grug-lang/grug-for-c)
+- [grug-rs](https://github.com/grug-lang/grug-rs)
 
-## Programs showcasing grug
+### Games
 
-- [grug mod loader for Minecraft](https://github.com/MyNameIsTrez/grug-mod-loader-for-minecraft)
-- [Box2D and raylib game](https://github.com/MyNameIsTrez/grug-box2d-and-raylib-game)
-- [terminal game: C/C++](https://github.com/MyNameIsTrez/grug-terminal-game-c-cpp)
-- [terminal game: Python](https://github.com/MyNameIsTrez/grug-terminal-game-python)
-- [terminal game: Java](https://github.com/MyNameIsTrez/grug-terminal-game-java)
-- [grug benchmarks](https://github.com/MyNameIsTrez/grug-benchmarks)
+- [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft)
+- [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game)
+- [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp)
+- [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java)
+
+### Misc
+
+- [grug tests](https://github.com/grug-lang/grug-tests)
+- [grug bench](https://github.com/grug-lang/grug-bench)
+- [grug vscode](https://github.com/grug-lang/grug-vscode)
+- [grug bot](https://github.com/grug-lang/grug-bot)
