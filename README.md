@@ -12,7 +12,7 @@ If you use VS Code, you can install the `grug` extension.
 
 Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
 
-grug has an issues board, which can be filtered to for example list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue).
+grug has an issue board, which can be filtered to, for example, list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue).
 
 ## Showcases
 
