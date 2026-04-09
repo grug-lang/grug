@@ -12,6 +12,8 @@ If you use VS Code, you can install the [`grug`](https://marketplace.visualstudi
 
 Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
 
+If you are planning to work on an issue, leave a comment asking to be assigned to the issue. Only work on issues that have the `planned` label.
+
 grug has an issue board, which can be filtered to, for example, list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue).
 
 ## Showcases
