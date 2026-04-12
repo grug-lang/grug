@@ -39,6 +39,7 @@ local _fib_list(n: number) List[number] {
 
     i: number = 0
     while i < n {
+        # This .append() is a method.
         fib_list.append(_fib(i, memo))
         i = i + 1
     }
