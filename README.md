@@ -12,11 +12,21 @@ If you use VS Code, you can install the [`grug`](https://marketplace.visualstudi
 
 `fib-Calculator.grug`:
 ```py
+# This is a member variable, which means
+# every entity gets its own copy of it.
+count: number = 100
+
+# The host has to call this function.
 export run() {
-    fib_numbers: List[number] = _fib_list(100)
+    # We calculate the first 100 values
+    # in the fibonacci sequence, and store them
+    # in a local List called `fib_numbers`.
+    fib_numbers: List[number] = _fib_list(count)
+
     print_list(fib_numbers)
 }
 
+# The host can't call local functions.
 local _fib_list(n: number) List[number] {
     fib_list: List[number] = List()
 
@@ -34,15 +44,21 @@ local _fib_list(n: number) List[number] {
 }
 
 local _fib(n: number, memo: Dict[number, number]) number {
+    # If we already calculated say fib(42),
+    # we don't have to calculate it again.
     if memo.has_key(n) {
         return memo.get(n)
     }
 
     result: number = n
     if n > 1 {
+        # The definition of the fibonacci sequence is:
+        # fib(n) = fib(n-1) + fib(n-2)
         result = _fib(n - 1, memo) + _fib(n - 2, memo)
     }
 
+    # Memoize the result, so that we
+    # won't have to calculate it next time.
     memo.set(n, result)
     return result
 }
