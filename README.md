@@ -10,7 +10,7 @@ If you use VS Code, you can install the [`grug`](https://marketplace.visualstudi
 
 ## Example
 
-`fib-Calculator.grug`:
+Here is a contrived `fib-Calculator.grug` that a program might have:
 ```py
 # This is a member variable, which means
 # every entity gets its own copy of it.
