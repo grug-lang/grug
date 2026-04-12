@@ -25,7 +25,7 @@ export run() {
 
     # Prints [0, 1, 1, 2, 3, 5, ...].
     # This host function must have been
-    # declared in mod_api.json.
+    # declared by mod_api.json.
     print_list(fib_numbers)
 }
 
