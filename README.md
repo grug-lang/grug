@@ -49,7 +49,7 @@ local _fib_list(n: number) List[number] {
 
 local _fib(n: number, memo: Dict[number, number]) number {
     # If we already calculated say fib(42),
-    # we don't have to calculate it again.
+    # we don't have to recalculate it.
     if memo.has_key(n) {
         return memo.get(n)
     }
@@ -62,7 +62,7 @@ local _fib(n: number, memo: Dict[number, number]) number {
     }
 
     # Memoize the result, so that we
-    # won't have to calculate it next time.
+    # won't have to recalculate it next time.
     memo.set(n, result)
     return result
 }
