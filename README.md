@@ -11,7 +11,7 @@ If you use VS Code, you can install the [`grug`](https://marketplace.visualstudi
 ## Example
 
 `fib-Calculator.grug`:
-```grug
+```py
 export run() {
     fib_numbers: List[number] = _fib_list(100)
     print_list(fib_numbers)
