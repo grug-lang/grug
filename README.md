@@ -23,6 +23,7 @@ export run() {
     # in a local List called `fib_numbers`.
     fib_numbers: List[number] = _fib_list(count)
 
+    # Prints [0, 1, 1, 2, 3, 5, ...].
     print_list(fib_numbers)
 }
 
