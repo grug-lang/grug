@@ -8,6 +8,46 @@ See the YouTube video [Creating grug: the perfect modding language](https://www.
 
 If you use VS Code, you can install the [`grug`](https://marketplace.visualstudio.com/items?itemName=MyNameIsTrez.grug) extension.
 
+## Example
+
+`fib-Calculator.grug`:
+```grug
+export run() {
+    fib_numbers: List[number] = _fib_list(100)
+    print_list(fib_numbers)
+}
+
+local _fib_list(n: number) List[number] {
+    fib_list: List[number] = List()
+
+    # We will be memoizing (caching) the results
+    # to speed up computation.
+    memo: Dict[number, number] = Dict()
+
+    i: number = 0
+    while i < n {
+        fib_list.append(_fib(i, memo))
+        i = i + 1
+    }
+
+    return fib_list
+}
+
+local _fib(n: number, memo: Dict[number, number]) number {
+    if memo.has_key(n) {
+        return memo.get(n)
+    }
+
+    result: number = n
+    if n > 1 {
+        result = _fib(n - 1, memo) + _fib(n - 2, memo)
+    }
+
+    memo.set(n, result)
+    return result
+}
+```
+
 ## Contributing
 
 Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
