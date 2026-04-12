@@ -16,7 +16,7 @@ If you use VS Code, you can install the [`grug`](https://marketplace.visualstudi
 # every entity gets its own copy of it.
 count: number = 100
 
-# The host has to call this function.
+# The host can call this exported function.
 export run() {
     # We calculate the first 100 values
     # in the fibonacci sequence, and store them
