@@ -93,7 +93,7 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 | [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp) |
 | [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java) |
 
-| Misc |
+| Other |
 | --- |
 | [grug-tests](https://github.com/grug-lang/grug-tests) |
 | [grug-bench](https://github.com/grug-lang/grug-bench) |
