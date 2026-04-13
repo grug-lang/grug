@@ -13,7 +13,7 @@ See the YouTube video [Creating grug: the perfect modding language](https://www.
 Here is a contrived `fib-Calculator.grug` that a program might have:
 ```py
 # This is a member variable, which means
-# every entity has its own copy of it.
+# every entity gets its own copy of it.
 count: number = 100
 
 # The host can call this exported function.
