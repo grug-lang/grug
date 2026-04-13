@@ -6,8 +6,6 @@ See the YouTube video [Creating grug: the perfect modding language](https://www.
 
 [<img src="https://img.youtube.com/vi/4oUToVXR2Vo/maxresdefault.jpg" height="200">](https://youtu.be/4oUToVXR2Vo)
 
-If you use VS Code, you can install the [`grug`](https://marketplace.visualstudio.com/items?itemName=MyNameIsTrez.grug) extension.
-
 ## Example
 
 Here is a contrived `fib-Calculator.grug` that a program might have:
