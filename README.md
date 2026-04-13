@@ -21,6 +21,7 @@ export run() {
     # We calculate the first 100 values
     # in the fibonacci sequence, and store them
     # in a local List called `fib_numbers`.
+    # List is a generic class.
     fib_numbers: List[number] = _fib_list(count)
 
     # Prints [0, 1, 1, 2, 3, 5, ...].
