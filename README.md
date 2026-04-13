@@ -95,7 +95,7 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 
 | Misc |
 | --- |
-| [grug tests](https://github.com/grug-lang/grug-tests) |
-| [grug bench](https://github.com/grug-lang/grug-bench) |
-| [grug vscode](https://github.com/grug-lang/grug-vscode) |
-| [grug bot](https://github.com/grug-lang/grug-bot) |
+| [grug-tests](https://github.com/grug-lang/grug-tests) |
+| [grug-bench](https://github.com/grug-lang/grug-bench) |
+| [grug-vscode](https://github.com/grug-lang/grug-vscode) |
+| [grug-bot](https://github.com/grug-lang/grug-bot) |
