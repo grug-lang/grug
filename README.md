@@ -17,6 +17,7 @@ Here is a contrived `fib-Calculator.grug` that a program might have:
 count: number = 100
 
 # The host can call this exported function.
+# This function is declared by mod_api.json.
 export run() {
     # We calculate the first 100 values
     # of the fibonacci sequence, and store them
@@ -25,8 +26,7 @@ export run() {
     fib_numbers: List[number] = _fib_list(count)
 
     # Prints [0, 1, 1, 2, 3, 5, ...].
-    # This host function must have been
-    # declared by mod_api.json.
+    # This host function is declared by mod_api.json.
     print_list(fib_numbers)
 }
 
