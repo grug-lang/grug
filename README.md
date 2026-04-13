@@ -77,24 +77,24 @@ If you are planning to work on an issue, leave a comment asking to be assigned t
 
 grug has an issue board, which can be filtered to, for example, list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue).
 
-## Showcases
+## Links
 
-### Bindings
+| Bindings |
+| --- |
+| [grug-for-python](https://github.com/grug-lang/grug-for-python) |
+| [grug-for-c](https://github.com/grug-lang/grug-for-c) |
+| [grug-rs](https://github.com/grug-lang/grug-rs) |
 
-- [grug-for-python](https://github.com/grug-lang/grug-for-python)
-- [grug-for-c](https://github.com/grug-lang/grug-for-c)
-- [grug-rs](https://github.com/grug-lang/grug-rs)
+| Games |
+| --- |
+| [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft) |
+| [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game) |
+| [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp) |
+| [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java) |
 
-### Games
-
-- [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft)
-- [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game)
-- [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp)
-- [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java)
-
-### Misc
-
-- [grug tests](https://github.com/grug-lang/grug-tests)
-- [grug bench](https://github.com/grug-lang/grug-bench)
-- [grug vscode](https://github.com/grug-lang/grug-vscode)
-- [grug bot](https://github.com/grug-lang/grug-bot)
+| Misc |
+| --- |
+| [grug tests](https://github.com/grug-lang/grug-tests) |
+| [grug bench](https://github.com/grug-lang/grug-bench) |
+| [grug vscode](https://github.com/grug-lang/grug-vscode) |
+| [grug bot](https://github.com/grug-lang/grug-bot) |
