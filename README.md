@@ -58,7 +58,7 @@ local _fib(n: number, memo: Dict[number, number]) number {
 
     result: number = n
     if n > 1 {
-        # The definition of the fibonacci sequence is:
+        # The fibonacci sequence is recursive:
         # fib(n) = fib(n-1) + fib(n-2)
         result = _fib(n - 1, memo) + _fib(n - 2, memo)
     }
