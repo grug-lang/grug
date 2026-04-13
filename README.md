@@ -31,7 +31,7 @@ export run() {
 }
 
 # The host can't call local functions.
-# All local function names start with an underscore.
+# Local function names must start with an underscore.
 local _fib_list(n: number) List[number] {
     fib_list: List[number] = List()
 
