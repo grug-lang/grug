@@ -19,7 +19,7 @@ count: number = 100
 # The host can call this exported function.
 export run() {
     # We calculate the first 100 values
-    # in the fibonacci sequence, and store them
+    # of the fibonacci sequence, and store them
     # in a local List called `fib_numbers`.
     # List is a generic class.
     fib_numbers: List[number] = _fib_list(count)
