@@ -80,7 +80,7 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 
 ## Links
 
-| Bindings |
+| Implementations |
 | --- |
 | [grug-for-python](https://github.com/grug-lang/grug-for-python) |
 | [grug-for-c](https://github.com/grug-lang/grug-for-c) |
