@@ -80,22 +80,22 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 
 ## Links
 
-| Implementations |
-| --- |
-| [grug-for-python](https://github.com/grug-lang/grug-for-python) |
-| [grug-for-c](https://github.com/grug-lang/grug-for-c) |
-| [grug-rs](https://github.com/grug-lang/grug-rs) |
+### Implementations
 
-| Games |
-| --- |
-| [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft) |
-| [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game) |
-| [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp) |
-| [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java) |
+These grug implementations pass all 500+ official [grug tests](https://github.com/grug-lang/grug-tests), and they make it easy to put grug into existing programs:
+- [grug-for-python](https://github.com/grug-lang/grug-for-python)
+- [grug-for-c](https://github.com/grug-lang/grug-for-c)
+- [grug-rs](https://github.com/grug-lang/grug-rs)
 
-| Other |
-| --- |
-| [grug-tests](https://github.com/grug-lang/grug-tests) |
-| [grug-bench](https://github.com/grug-lang/grug-bench) |
-| [grug-vscode](https://github.com/grug-lang/grug-vscode) |
-| [grug-bot](https://github.com/grug-lang/grug-bot) |
+### Games
+
+- [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft)
+- [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game)
+- [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp)
+- [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java)
+
+### Other
+
+- [grug-vscode](https://github.com/grug-lang/grug-vscode)
+- [grug-bench](https://github.com/grug-lang/grug-bench)
+- [grug-discord-bot](https://github.com/grug-lang/grug-discord-bot)
