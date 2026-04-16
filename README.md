@@ -82,7 +82,7 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 
 ### Implementations
 
-These grug implementations pass all 500+ official [grug tests](https://github.com/grug-lang/grug-tests), and are easy to integrate into any program:
+These grug implementations pass all 500+ official [grug tests](https://github.com/grug-lang/grug-tests), and show off "hello world" programs:
 - [grug-for-python](https://github.com/grug-lang/grug-for-python)
 - [grug-for-c](https://github.com/grug-lang/grug-for-c)
 - [grug-rs](https://github.com/grug-lang/grug-rs)
