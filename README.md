@@ -82,7 +82,7 @@ grug has an issue board that can be filtered to list [good first issues](https:/
 
 ### Implementations
 
-grug implementations consist of three core components: API bindings, a tokenization frontend, and a backend execution engine.
+grug implementations consist of three core components: API bindings, a grug parser frontend, and a backend execution engine.
 
 These grug implementations pass all 500+ official [grug tests](https://github.com/grug-lang/grug-tests), and include 'Hello, world!' examples:
 - [grug-for-python](https://github.com/grug-lang/grug-for-python)
