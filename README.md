@@ -86,7 +86,7 @@ grug implementations consist of three core components: API bindings, a grug pars
 
 These grug implementations by the community pass all 500+ official [grug tests](https://github.com/grug-lang/grug-tests), and include 'Hello, world!' examples:
 - [grug-for-python](https://github.com/grug-lang/grug-for-python)
-- [grug-for-c](https://github.com/grug-lang/grug-for-c)
+- [grug-for-c](https://github.com/grug-lang/grug-for-c) (don't use this yet, as it's very new)
 - [grug-rs](https://github.com/grug-lang/grug-rs)
 
 ### Games
