@@ -88,6 +88,7 @@ These grug implementations by the community pass all 500+ official [grug tests](
 - [grug-for-python](https://github.com/grug-lang/grug-for-python)
 - [grug-for-c](https://github.com/grug-lang/grug-for-c) (don't use this yet, as it's very new)
 - [grug-rs](https://github.com/grug-lang/grug-rs)
+- [grug-for-lua](https://github.com/grug-lang/grug-for-lua) (don't use this yet, as it's very new)
 
 ### Games
 
