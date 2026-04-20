@@ -92,7 +92,7 @@ These grug implementations by the community pass all 500+ official [grug tests](
 
 ### Games
 
-- [grug mod loader for Minecraft](https://github.com/grug-lang/grug-mod-loader-for-minecraft)
+- [grug for Minecraft](https://github.com/grug-lang/grug-for-minecraft)
 - [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game)
 - [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp)
 - [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java)
