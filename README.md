@@ -92,12 +92,12 @@ These grug implementations by the community pass all 500+ official [grug tests](
 
 ### Games
 
-- [grug for Minecraft](https://github.com/grug-lang/grug-for-minecraft)
+- [grug for Minecraft](https://github.com/grug-lang/grug-for-minecraft) (will be rewritten)
 - [grug for ComputerCraft](https://github.com/grug-lang/grug-for-computercraft)
 - [grug for Cortex Command](https://github.com/grug-lang/grug-for-cortex-command)
-- [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game)
-- [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp)
-- [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java)
+- [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game) (will be rewritten)
+- [grug terminal game: C/C++](https://github.com/grug-lang/grug-terminal-game-c-cpp) (will be rewritten)
+- [grug terminal game: Java](https://github.com/grug-lang/grug-terminal-game-java) (will be rewritten)
 
 ### Other
 
