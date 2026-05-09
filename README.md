@@ -4,13 +4,11 @@ grug is a minimal, strongly-typed modding language designed for long-term compat
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
-## YouTube Video and Blog Post
+## Blog Post and YouTube Video
 
-grug started out as [a blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html).
+grug started out as a simple wishlist in [my first blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html). The blog post evolved alongside [`grug.c`](https://github.com/grug-lang/grug/tree/legacy).
 
-I kept the blog post in sync with the [`legacy`](https://github.com/grug-lang/grug/tree/legacy) branch for over a year, but 
-
-See the YouTube video [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo) for an introduction to the language:
+I turned the blog post into a presentation for work, and posted it to YouTube, where it got a lot more attention than I had anticipated: [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo)
 
 ## Example
 
