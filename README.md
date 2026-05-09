@@ -4,6 +4,8 @@ grug is a minimal, strongly-typed modding language designed for long-term compat
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
+## YouTube Video and Blog Post
+
 See the YouTube video [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo) for an introduction to the grug modding language, or read [its blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html):
 
 [<img src="https://img.youtube.com/vi/4oUToVXR2Vo/maxresdefault.jpg" height="200">](https://youtu.be/4oUToVXR2Vo)
