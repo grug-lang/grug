@@ -1,6 +1,6 @@
 # grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.gg/https://discord.com/invite/ufeJ6MBXJG)
 
-grug is a minimal, strongly-typed modding language designed for long-term compatibility and "immortal" mods across platforms, from modern systems down to the NES. It features a [small LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), no standard library, and a lossless, whitespaceless JSON AST to enable automatic upgrading, downgrading, and cross-language transpilation. With hot reloading and allowing users to override the grug backend and `mod_api.json`, grug prioritizes portability, control, and permanence.
+grug is a minimal, strongly-typed modding language designed for long-term compatibility and "immortal" mods across platforms, from modern systems down to the NES. It features a [small LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), no standard library, and a lossless, whitespaceless JSON AST to enable automatic upgrading, downgrading, and cross-language transpilation. With hot reloading and allowing the community to override the grug backend and `mod_api.json` to patch in missing functionality, grug prioritizes portability, control, and permanence.
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
