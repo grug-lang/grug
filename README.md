@@ -10,6 +10,8 @@ grug started out as a simple wishlist in [my first blog post](https://mynameistr
 
 I turned the blog post into a presentation for work, and posted it to YouTube, where it got a lot more attention than I had anticipated: [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo)
 
+grug has matured a lot after the blog post and YouTube video were published, but its essence has stayed the same.
+
 ## Example
 
 Here is a contrived `fib-Calculator.grug` that a program might have:
