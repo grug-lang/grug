@@ -107,4 +107,5 @@ These grug implementations by the community pass all 500+ official [grug tests](
 
 - [grug-vscode](https://github.com/grug-lang/grug-vscode)
 - [grug-bench](https://github.com/grug-lang/grug-bench)
+- [grug-ir](https://github.com/grug-lang/grug-ir)
 - [grug-discord-bot](https://github.com/grug-lang/grug-discord-bot)
