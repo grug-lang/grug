@@ -37,11 +37,11 @@ export run() {
 # The host can't call local functions.
 # Local function names must start with an underscore.
 local _fib_list(n: number) List[number] {
-    fib_list: List[number] = List()
+    fib_list: List[number] = list()
 
     # We will be memoizing (caching) the results
     # to speed up computation.
-    memo: Dict[number, number] = Dict()
+    memo: Dict[number, number] = dict()
 
     i: number = 0
     while i < n {
