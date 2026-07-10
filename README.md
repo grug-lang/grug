@@ -84,7 +84,7 @@ local _heal_player(player: Player) {
     # pos() returns Pos.
     # e"" is an entity string, which lets grug periodically check
     # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
-    # Using e"blood_particle" instead lets grug only search this grug file's mod.
+    # Omitting the `vanilla:` prefix would restrict the search to this mod only.
     player.pos().spawn(e"vanilla:blood_particle")
 }
 ```
