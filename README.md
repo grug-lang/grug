@@ -21,7 +21,7 @@ print("Brainzzzz...")
 i: number = 0
 while i < 3 {
     # r"" is a resource string, which lets grug periodically check
-    # that "mods/monsters/sounds/brainz.mp3" exists.
+    # that `mods/monsters/sounds/brainz.mp3` exists.
     # Resource strings deliberately can't refer to resources from other mods.
     play_sound(r"sounds/brainz.mp3")
     i = i + 1
