@@ -53,6 +53,7 @@ A program might have this `fib-Calculator.grug`:
 count: number = 100
 
 # The host can call this exported function.
+# Other grug files can't call this exported function directly.
 # This function is declared by mod_api.json.
 export run() {
     # We calculate the first 100 values
