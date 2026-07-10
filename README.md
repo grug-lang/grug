@@ -20,7 +20,6 @@ print("Brainzzzz...")
 
 export tick() {
     # `me` is the current zombie running this tick() function.
-    # Actor is a game-specific type declared in mod_api.json.
     player: Actor = me.get_nearest_player()
 
     # Attack the player if it is close
