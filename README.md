@@ -1,6 +1,7 @@
 # grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.com/invite/ufeJ6MBXJG)
 
-grug is a modding language with one job: make your mods immortal. Mods written today aim to still run on whatever software embeds them in 100 years. A Minecraft mod written in grug can be used in any version of the game, from Beta 1.7.3 (2011) to the latest version, with no changes to its source code whatsoever.
+grug is a modding language with one job: make your mods immortal. Mods written today aim to still run on whatever software embeds them in 100 years. 
+A Minecraft mod written in grug can be used in any version of the game, from Beta 1.7.3 (2011) to the latest version, with no manual changes to its source code whatsoever.
 
 grug achieves this with a minimal, strongly-typed language, a small [LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), and no standard library. Mods compile to a lossless, whitespaceless JSON AST, enabling automatic upgrading, downgrading, and cross-language transpilation. From there, mods compile to [grug IR](https://github.com/grug-lang/grug-ir), which host functions compile to ahead of time too, eliminating FFI overhead and making them inlinable. A community-overridable `mod_api.json` patches missing functionality, swappable backends increase performance, and hot reloading speeds up iteration.
 
