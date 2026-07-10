@@ -20,7 +20,7 @@ print("Brainzzzz...")
 
 i: number = 0
 while i < 3 {
-    # r"" is a resource string, where grug periodically checks
+    # r"" is a resource string, which lets grug periodically check
     # that "mods/monsters/sounds/brainz.mp3" exists.
     # Resource strings deliberately can't refer to resources from other mods.
     play_sound(r"sounds/brainz.mp3")
@@ -36,7 +36,7 @@ export tick() {
         player.add_health(-3)
 
         # pos() returns Pos.
-        # e"" is an entity string, where grug periodically checks
+        # e"" is an entity string, which lets grug periodically check
         # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
         me.pos().spawn(e"vanilla:blood_particle")
     }
