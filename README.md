@@ -76,11 +76,6 @@ export tick() {
 local _heal_player(player: Player) {
     player.set_health(100)
 
-    # r"" is a resource string, which lets grug periodically check
-    # that `mods/cheats/sounds/heal.mp3` exists.
-    # Resource strings deliberately can't refer to resources in other mods.
-    play_sound(r"sounds/heal.wav")
-
     # pos() returns Pos.
     # e"" is an entity string, which lets grug periodically check
     # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
