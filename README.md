@@ -14,9 +14,8 @@ grug has matured a lot after the blog post and YouTube video were published, but
 
 ## Simple Example
 
+This is `mods/monsters/zombie-Actor.grug`:
 ```py
-# mods/monsters/zombie-Actor.grug
-
 print("Brainzzzz...")
 
 export tick() {
@@ -32,9 +31,8 @@ export tick() {
 
 ## Advanced Example
 
+This is `mods/cheats/godmode-Entity.grug`:
 ```py
-# mods/cheats/godmode-Entity.grug
-
 # This is a member variable, which means
 # every entity gets its own copy of it.
 i: number = 0
