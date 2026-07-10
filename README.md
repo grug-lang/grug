@@ -4,7 +4,7 @@ grug is a modding language with one job: make your mods immortal. Mods written t
 
 grug achieves this with a minimal, strongly-typed language, a small [LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), and no standard library. Mods compile to a lossless, whitespaceless JSON AST, which enables automatic upgrading, downgrading, and cross-language transpilation. From that AST, mods compile to [grug IR](https://github.com/grug-lang/grug-ir). Host functions compile to grug IR ahead of time too, which eliminates FFI overhead and makes them inlinable.
 
-`mod_api.json` declares the host function surface, and the community can override it. grug backends are hot swappable, so games can pick whichever gives the best performance. Hot reloading of code and resources speeds up iteration during development.
+`mod_api.json` declares the full mod-host API surface (entities, classes, and functions), and the community can override it. grug backends are hot swappable, so games can pick whichever gives the best performance. Hot reloading of code and resources speeds up iteration during development.
 
 grug is still undergoing heavy evolution, so expect breaking changes as the language and its implementations mature.
 
