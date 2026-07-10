@@ -78,8 +78,8 @@ local _heal_player(player: Player) {
 
     # pos() returns Pos.
     # e"" is an entity string, which lets grug periodically check
-    # that `sparkle-X.grug` exists somewhere in mods/vanilla/.
-    # spawn() declares `X` here must be Entity or any subtype of it, like Particle.
+    # that `sparkle-Entity.grug` exists somewhere in mods/vanilla/.
+    # spawn() declares it expects an Entity, but grug permits subtypes like Particle.
     # Removing the `vanilla:` prefix would restrict the search to this mod only.
     player.pos().spawn(e"vanilla:sparkle")
 }
