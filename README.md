@@ -46,7 +46,7 @@ export tick() {
 
 ## Advanced Example
 
-A program might have this contrived `fib-Calculator.grug`:
+A program might have this `fib-Calculator.grug`:
 ```py
 # This is a member variable, which means
 # every entity gets its own copy of it.
