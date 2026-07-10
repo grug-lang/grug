@@ -63,7 +63,7 @@ export spawn_from_parent(parent: Entity) {
 
 export tick() {
     # The game would raise a runtime error if spawn_from_parent()
-    # hadn't always been called first by the game.
+    # weren't always called first by the game.
     player: Player = opt_player.unwrap()
 
     if player.health() < 10 {
