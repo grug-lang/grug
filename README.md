@@ -8,14 +8,6 @@ grug is still undergoing heavy evolution, so expect breaking changes as the lang
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
-## Blog Post and YouTube Video
-
-grug started out as a simple wishlist in [my first blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html). It evolved alongside [`grug.c`](https://github.com/grug-lang/grug/tree/legacy).
-
-I turned the blog post into a presentation for work, and posted it to YouTube, where it got a lot more attention than I had anticipated: [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo)
-
-grug has matured a lot after the blog post and YouTube video were published, but its essence has stayed the same.
-
 ## Simple Example
 
 This is `mods/monsters/zombie-Actor.grug`:
@@ -88,6 +80,14 @@ local _heal_player(player: Player) {
     player.pos().spawn(e"vanilla:sparkle")
 }
 ```
+
+## Blog Post and YouTube Video
+
+grug started out as a simple wishlist in [my first blog post](https://mynameistrez.github.io/2024/02/29/creating-the-perfect-modding-language.html). It evolved alongside [`grug.c`](https://github.com/grug-lang/grug/tree/legacy).
+
+I turned the blog post into a presentation for work, and posted it to YouTube, where it got a lot more attention than I had anticipated: [Creating grug: the perfect modding language](https://www.youtube.com/watch?v=4oUToVXR2Vo)
+
+grug has matured a lot after the blog post and YouTube video were published, but its essence has stayed the same.
 
 ## Contributing
 
