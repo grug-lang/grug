@@ -33,6 +33,7 @@ This is `mods/cheats/godmode-Entity.grug`:
 # which means every entity gets its own copy of it.
 i: number = 0
 
+# All code in member scope runs when the entity is created.
 while i < 3 {
     # This play_sound() host function is declared by mod_api.json.
     # r"" is a resource string, which lets grug periodically check
