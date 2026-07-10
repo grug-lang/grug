@@ -1,6 +1,6 @@
 # grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.com/invite/ufeJ6MBXJG)
 
-grug is a modding language with one job: make your mods immortal, meaning they aim to still run on whatever software embeds them in 100 years.
+grug is a modding language with one job: make your mods immortal. Mods written today aim to still run on whatever software embeds them in 100 years.
 
 As a practical example, grug's design aims to let Minecraft mods written for Beta 1.7.3 (from 2011) automatically run in the latest version of the game.
 
