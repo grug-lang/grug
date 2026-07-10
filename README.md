@@ -14,96 +14,80 @@ grug has matured a lot after the blog post and YouTube video were published, but
 
 ## Simple Example
 
-A game might have this `mods/monsters/zombie-Actor.grug`:
 ```py
+# mods/monsters/zombie-Actor.grug
+
 print("Brainzzzz...")
 
-i: number = 0
-while i < 3 {
-    # r"" is a resource string, which lets grug periodically check
-    # that `mods/monsters/sounds/brainz.mp3` exists.
-    # Resource strings deliberately can't refer to resources in other mods.
-    play_sound(r"sounds/brainz.mp3")
-    i = i + 1
-}
-
 export tick() {
-    # `me` refers to this Actor instance of zombie-Actor.grug.
+    # `me` is the current zombie running this tick() function.
     player: Actor = me.get_nearest_player()
 
     # Attack the player if it is close
     if me.distance(player) < 100 {
         player.add_health(-3)
-
-        # pos() returns Pos.
-        # e"" is an entity string, which lets grug periodically check
-        # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
-        # Using e"blood_particle" instead lets grug search the zombie's own mod.
-        me.pos().spawn(e"vanilla:blood_particle")
     }
 }
 ```
 
 ## Advanced Example
 
-A program might have this `fib-Calculator.grug`:
 ```py
+# mods/cheats/godmode-Entity.grug
+
 # This is a member variable, which means
 # every entity gets its own copy of it.
-count: number = 100
+i: number = 0
 
-# The host can call this exported function.
+while i < 3 {
+    # This play_sound() host function is declared by mod_api.json.
+    # r"" is a resource string, which lets grug periodically check
+    # that `mods/cheats/sounds/activation.mp3` exists.
+    # Resource strings deliberately can't refer to resources in other mods.
+    play_sound(r"sounds/activation.mp3")
+
+    i = i + 1
+}
+
+# Optional is a generic class declared by mod_api.json.
+# List and Dict are other generic classes many games declare.
+opt_player: Optional[Player] = optional()
+
+# The host can call this exported function, and is declared by mod_api.json.
 # Other grug files can't call this exported function directly.
-# This function is declared by mod_api.json.
-export run() {
-    # We calculate the first 100 values
-    # of the fibonacci sequence, and store them
-    # in a local List called `fib_numbers`.
-    # List is a generic class declared by mod_api.json.
-    fib_numbers: List[number] = _fib_list(count)
+export spawn_from_parent(parent: Entity) {
+    # This .cast() is a method.
+    # The game raises a runtime error if it wasn't spawned by a Player.
+    player: Player = parent.cast("Player")
 
-    # Prints [0, 1, 1, 2, 3, 5, ...].
-    # This host function is declared by mod_api.json.
-    print_list(fib_numbers)
+    opt_player.set(player)
+}
+
+export tick() {
+    # The game would raise a runtime error if spawn_from_parent()
+    # hadn't always been called first by the game.
+    player: Player = opt_player.unwrap()
+
+    if player.health() < 10 {
+        _heal_player(player)
+    }
 }
 
 # The host can't call local functions.
 # Local function names must start with an underscore.
-local _fib_list(n: number) List[number] {
-    fib_list: List[number] = list()
+local _heal_player(player: Player) {
+    player.set_health(100)
 
-    # We will be memoizing (caching) the results
-    # to speed up computation.
-    memo: Dict[number, number] = dict()
+    # r"" is a resource string, which lets grug periodically check
+    # that `mods/monsters/sounds/brainz.mp3` exists.
+    # Resource strings deliberately can't refer to resources in other mods.
+    play_sound(r"audio/heal.wav")
 
-    i: number = 0
-    while i < n {
-        # This .append() is a method.
-        fib_list.append(_fib(i, memo))
-        i = i + 1
-    }
-
-    return fib_list
-}
-
-local _fib(n: number, memo: Dict[number, number]) number {
-    # If we already calculated it,
-    # we don't have to recalculate it.
-    if memo.has_key(n) {
-        return memo.get(n)
-    }
-
-    result: number = n
-    if n > 1 {
-        # The fibonacci sequence is recursive:
-        # fib(n) = fib(n-1) + fib(n-2)
-        result = _fib(n - 1, memo) + _fib(n - 2, memo)
-    }
-
-    # Memoize the result, so that we
-    # won't have to recalculate it next time.
-    memo.set(n, result)
-    return result
+    # pos() returns Pos.
+    # e"" is an entity string, which lets grug periodically check
+    # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
+    # Using e"blood_particle" instead lets grug only search this grug file's mod.
+    player.pos().spawn(e"vanilla:blood_particle")
 }
 ```
 
