@@ -38,6 +38,7 @@ export tick() {
         # pos() returns Pos.
         # e"" is an entity string, which lets grug periodically check
         # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
+        # Using e"blood_particle" instead lets grug search the zombie's own mod.
         me.pos().spawn(e"vanilla:blood_particle")
     }
 }
