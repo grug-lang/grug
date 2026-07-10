@@ -44,7 +44,7 @@ export tick() {
 }
 ```
 
-## Advanced example
+## Advanced Example
 
 A program might have this contrived `fib-Calculator.grug`:
 ```py
