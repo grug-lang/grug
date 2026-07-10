@@ -33,8 +33,8 @@ export tick() {
 
 This is `mods/cheats/godmode-Entity.grug`:
 ```py
-# This is a member variable, which means
-# every entity gets its own copy of it.
+# This is a member variable (persists across frames),
+# which means every entity gets its own copy of it.
 i: number = 0
 
 while i < 3 {
