@@ -12,7 +12,18 @@ I turned the blog post into a presentation for work, and posted it to YouTube, w
 
 grug has matured a lot after the blog post and YouTube video were published, but its essence has stayed the same.
 
-## Example
+## Simple Example
+
+Here is a `zombie-Actor.grug` that a game might have:
+```py
+# TODO: Add
+
+export tick() {
+    # TODO: Add
+}
+```
+
+## Advanced example
 
 Here is a contrived `fib-Calculator.grug` that a program might have:
 ```py
