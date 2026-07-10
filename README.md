@@ -1,6 +1,12 @@
 # grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.com/invite/ufeJ6MBXJG)
 
-grug is a minimal, strongly-typed modding language built for digital preservation, portability, and performance. It produces "immortal" mods that run across platforms from modern systems down to the NES, using a [small LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), no standard library, and a lossless, whitespaceless JSON AST for automatic upgrading, downgrading, and cross-language transpilation. Mods compile to [grug IR](https://github.com/grug-lang/grug-ir), which eliminates FFI overhead by compiling host functions to grug IR ahead of time, making them inlinable. A community-overridable `mod_api.json` patches missing functionality, swappable backends increase performance, and hot reloading speeds up iteration.
+grug is a modding language with one job: make your mods immortal. Write a mod today, and it should still run correctly on whatever platform or software embeds it in 20 years.
+
+As a practical example, grug's design aims to let Minecraft mods written for Beta 1.7.3 (from 2011) automatically run in the latest version of the game.
+
+grug achieves this with a minimal, strongly-typed language, a small [LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), and no standard library. Mods compile to a lossless, whitespaceless JSON AST, which allows automatic upgrading, downgrading, and cross-language transpilation. From there, mods compile to [grug IR](https://github.com/grug-lang/grug-ir), which eliminates FFI overhead by compiling host functions to grug IR ahead of time, making them inlinable. A community-overridable `mod_api.json` patches missing functionality, swappable backends increase performance, and hot reloading speeds up iteration.
+
+grug is still undergoing heavy evolution, so expect breaking changes as the language and its implementations mature.
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
