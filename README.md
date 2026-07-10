@@ -14,18 +14,38 @@ grug has matured a lot after the blog post and YouTube video were published, but
 
 ## Simple Example
 
-Here is a `zombie-Actor.grug` that a game might have:
+A game might have this `mods/monsters/zombie-Actor.grug`:
 ```py
-# TODO: Add
+print("Brainzzzz...")
+
+i: number = 0
+while i < 3 {
+    # r"" is a resource string, where grug periodically checks
+    # that "mods/monsters/sounds/brainz.mp3" exists.
+    # Resource strings deliberately can't refer to resources from other mods.
+    play_sound(r"sounds/brainz.mp3")
+    i = i + 1
+}
 
 export tick() {
-    # TODO: Add
+    # `me` refers to this Actor instance of zombie-Actor.grug.
+    player: Actor = me.get_nearest_player()
+
+    # Attack the player if it is close
+    if me.distance(player) < 100 {
+        player.add_health(-3)
+
+        # pos() returns Pos.
+        # e"" is an entity string, where grug periodically checks
+        # that `blood_particle-Entity.grug` exists somewhere in mods/vanilla/.
+        me.pos().spawn(e"vanilla:blood_particle")
+    }
 }
 ```
 
 ## Advanced example
 
-Here is a contrived `fib-Calculator.grug` that a program might have:
+A program might have this contrived `fib-Calculator.grug`:
 ```py
 # This is a member variable, which means
 # every entity gets its own copy of it.
