@@ -55,7 +55,7 @@ opt_player: Optional[Player] = optional()
 export spawn_from_parent(parent: Entity) {
     # This .cast() is a method.
     # The game raises a runtime error if it wasn't spawned by a Player.
-    player: Player = parent.cast("Player")
+    player: Player = parent.cast()
 
     opt_player.set(player)
 }
