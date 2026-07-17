@@ -46,9 +46,9 @@ while i < 3 {
     i = i + 1
 }
 
-# Optional is a generic class declared by mod_api.json.
+# Option is a generic class declared by mod_api.json.
 # List and Dict are other generic classes many games declare.
-opt_player: Optional[Player] = optional()
+opt_player: Option[Player] = option()
 
 # The host can call this exported function, and is declared by mod_api.json.
 # Other grug files can't call this exported function directly.
