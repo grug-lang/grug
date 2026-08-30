@@ -98,7 +98,7 @@ The contributing guidelines are the same for all repositories in the grug-lang o
 
 If you are planning to work on an issue, leave a comment asking to be assigned to the issue. Only work on issues that have the `planned` label.
 
-High-quality LLM-generated PRs are **only** welcome for issues labeled `good first issue`. They do not need to be assigned to you first, since these issues are written in enough detail to make the PRs easy to review. PRs that do not address all review feedback will be closed.
+High-quality, concise LLM-generated PRs are **only** welcome for issues labeled `good first issue`. They do not need to be assigned to you first, since these issues are written in enough detail to make the PRs easy to review. PRs that do not address all review feedback will be closed.
 
 grug has an issue board that can be filtered to list [good first issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=good+first+issue) and [planned issues](https://github.com/orgs/grug-lang/projects/1/views/1?sliceBy%5Bvalue%5D=planned).
 
