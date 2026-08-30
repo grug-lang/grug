@@ -94,7 +94,7 @@ grug has matured a lot after the blog post and YouTube video were published, but
 
 ## Contributing
 
-Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
+The contributing guidelines are the same for all repositories in the grug-lang organization. Create an issue before you make any pull request, as that gives everyone the chance to discuss it.
 
 If you are planning to work on an issue, leave a comment asking to be assigned to the issue. Only work on issues that have the `planned` label.
 
