@@ -4,6 +4,12 @@ grug is a general-purpose embedded programming language with one job: make your 
 
 <video src="https://github.com/user-attachments/assets/2a7949ae-643c-4274-9a06-12e528affe97" width="100%" autoplay controls loop muted></video>
 
+In the video above, four different Minecraft environments all hot-reload the same grug file:
+* Minecraft 1.20.6 with Forge
+* Minecraft Beta 1.7.3 with Ornithe
+* Minecraft Beta 1.7.3 with StationAPI
+* Minecraft Alpha 1.1.2_01 with Ornithe
+
 grug achieves this with a minimal, strongly-typed language, a small [LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), and opt-in standard library features. Mods compile to a lossless, whitespaceless JSON AST, which enables automatic upgrading, downgrading, and cross-language transpilation, making grug a universal modding language. From that AST, mods compile to [grug IR](https://github.com/grug-lang/grug-ir), which backends can transpile into other formats, such as LLVM IR. Host functions compile to grug IR ahead of time too, which eliminates FFI overhead and makes them inlinable. grug entities use the [actor model](https://en.wikipedia.org/wiki/Actor_model), communicating with each other only through host functions and optionally running across any number of threads.
 
 `mod_api.json` declares the full mod↔host API surface (entities, classes, and functions), specifying which versions of the application each individual function is available in. By restricting mods to this declared API, grug frees moderators from security-oriented code reviews, letting them focus on content changes like images and audio. Since it follows a [well-defined schema](https://github.com/grug-lang/grug-tests/blob/main/mod_api_schema.json), the community can build websites that render it as browsable documentation. Players can override `mod_api.json` via DLL injection, so a closed-source host's modding API can keep expanding after its developers stop, via a community-maintained `mod_api.json` rather than per-mod additions. grug backends are hot swappable, so players can pick whichever gives the best performance. Hot reloading of code and resources speeds up iteration during development.
