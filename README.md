@@ -116,7 +116,7 @@ These grug implementations by the community pass all 500+ official [grug tests](
 
 ### Games
 
-- [grug for Minecraft](https://github.com/grug-lang/grug-for-minecraft) (this is being rewritten, initially focusing on porting many Beta 1.7.3 mods)
+- [grug for Minecraft](https://github.com/grug-lang/grug-for-minecraft) (grug's flagship project)
 - [grug for ComputerCraft](https://github.com/grug-lang/grug-for-computercraft)
 - [grug for Cortex Command](https://github.com/grug-lang/grug-for-cortex-command)
 - [grug Box2D and raylib game](https://github.com/grug-lang/grug-box2d-and-raylib-game) (will be rewritten)
