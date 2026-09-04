@@ -2,7 +2,7 @@
 
 grug is a general-purpose embedded programming language with one job: make your mods immortal. grug's vision is that a mod (also called a plugin or extension) written today will continue to run 100 years from now, regardless of how much around it changes. A Minecraft mod written in grug aims to run in any version of the game, from Alpha 1.1.2_01 (2010) to the latest, eliminating [version chasing](https://www.youtube.com/watch?v=yfRq_a5wEEg) by requiring no manual changes to mod source code whatsoever.
 
-<video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
+<video src="https://github.com/user-attachments/assets/2a7949ae-643c-4274-9a06-12e528affe97" width="100%" autoplay controls loop muted></video>
 
 grug achieves this with a minimal, strongly-typed language, a small [LALR(1) grammar](https://github.com/grug-lang/grug-tests/blob/main/grug_grammar.lark), and opt-in standard library features. Mods compile to a lossless, whitespaceless JSON AST, which enables automatic upgrading, downgrading, and cross-language transpilation, making grug a universal modding language. From that AST, mods compile to [grug IR](https://github.com/grug-lang/grug-ir), which backends can transpile into other formats, such as LLVM IR. Host functions compile to grug IR ahead of time too, which eliminates FFI overhead and makes them inlinable. grug entities use the [actor model](https://en.wikipedia.org/wiki/Actor_model), communicating with each other only through host functions and optionally running across any number of threads.
 
