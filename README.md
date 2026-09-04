@@ -1,6 +1,6 @@
 # grug · [![](https://dcbadge.limes.pink/api/server/https://discord.com/invite/ufeJ6MBXJG)](https://discord.com/invite/ufeJ6MBXJG)
 
-grug is a general-purpose embedded programming language with one job: make your mods immortal. grug's vision is that a mod (also called a plugin or extension) written today will continue to run 100 years from now, regardless of how much around it changes. A Minecraft mod written in grug aims to run in any version of the game, from Beta 1.7.3 (2011) to the latest and the other way around, eliminating [version chasing](https://www.youtube.com/watch?v=yfRq_a5wEEg) by requiring no manual changes to its source code whatsoever.
+grug is a general-purpose embedded programming language with one job: make your mods immortal. grug's vision is that a mod (also called a plugin or extension) written today will continue to run 100 years from now, regardless of how much around it changes. A Minecraft mod written in grug aims to run in any version of the game, from Alpha 1.1.2_01 (2010) to the latest and the other way around, eliminating [version chasing](https://www.youtube.com/watch?v=yfRq_a5wEEg) by requiring no manual changes to its source code whatsoever.
 
 <video src="https://github.com/user-attachments/assets/31959bcf-e933-4080-bbb6-3c76fe8bfa39" width="100%" autoplay controls loop muted></video>
 
