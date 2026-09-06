@@ -6,8 +6,6 @@ grug's vision is that a mod (also called a plugin or extension) written today wi
 
 https://github.com/user-attachments/assets/2a7949ae-643c-4274-9a06-12e528affe97
 
-<video src="https://github.com/user-attachments/assets/2a7949ae-643c-4274-9a06-12e528affe97" width="100%" autoplay controls loop muted></video>
-
 In the video above, four different Minecraft environments all hot reload the same grug file:
 * Minecraft 1.20.6 with Forge
 * Minecraft Beta 1.7.3 with Ornithe
