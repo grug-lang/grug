@@ -58,7 +58,8 @@ while i < 3 {
 
 # Option is a generic class declared by mod_api.json.
 # List and Dict are other generic classes many games declare.
-opt_player: Option[Player] = option()
+# Option.new() is a static method.
+opt_player: Option[Player] = Option.new()
 
 # The host can call this exported function, and is declared by mod_api.json.
 # Other grug files can't call this exported function directly.
