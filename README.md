@@ -39,7 +39,7 @@ export tick() {
 
 ## Advanced Example
 
-This is `mods/cheats/godmode-Entity.grug`:
+This is `mods/cheats/godmode-Entity.grug`. It shows virtually every feature grug has, so if a feature isn't shown, like defining your own types, grug simply doesn't have it:
 ```py
 # This is a member variable (persists across ticks),
 # which means every entity gets its own copy of it.
