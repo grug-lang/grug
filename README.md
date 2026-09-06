@@ -41,7 +41,7 @@ export tick() {
 
 This is `mods/cheats/godmode-Entity.grug`:
 ```py
-# This is a member variable (persists across frames),
+# This is a member variable (persists across ticks),
 # which means every entity gets its own copy of it.
 i: number = 0
 
