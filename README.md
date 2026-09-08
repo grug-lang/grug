@@ -84,7 +84,8 @@ export tick() {
 # The host can't call local functions.
 # Local function names must start with an underscore.
 local _heal_player(player: Player) {
-    player.set_health(100)
+    # Arguments can optionally specify the parameter name for readability.
+    player.set_health(amount=100)
 
     # pos() returns Pos.
     # e"" is an entity string, which lets grug periodically check
