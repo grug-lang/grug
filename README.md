@@ -84,7 +84,7 @@ export tick() {
 # The host can't call local functions.
 # Local function names must start with an underscore.
 local _heal_player(player: Player) {
-    # Arguments can optionally specify the parameter name for readability.
+    # Arguments can optionally document the parameter name for readability.
     player.set_health(amount=100)
 
     # pos() returns Pos.
