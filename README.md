@@ -48,7 +48,7 @@ i: number = 0
 # All code in member scope runs when the entity is created.
 while i < 3 {
     # This play_sound() host function is declared by mod_api.json.
-    # r"" is a resource string, validating that `mods/cheats/sounds/activation.mp3` exists.
+    # r"" is a resource string, validating that mods/cheats/sounds/activation.mp3 exists.
     # grug watches the mods directory so any file can be hot reloaded.
     # Resource strings deliberately can't refer to resources in other mods.
     play_sound(r"sounds/activation.mp3")
@@ -88,8 +88,8 @@ local _heal_player(player: Player) {
     player.set_health(amount=100)
 
     # pos() returns Pos.
-    # e"" is an entity string, which validates that `sparkle-Entity.grug`
-    # exists somewhere in `mods/vanilla/`.
+    # e"" is an entity string, which validates that sparkle-Entity.grug
+    # exists somewhere in mods/vanilla/.
     # spawn() declares it expects an Entity, but grug permits subtypes like Particle.
     # Removing the `vanilla:` prefix restricts the search to this grug file's mod.
     player.pos().spawn(e"vanilla:sparkle")
