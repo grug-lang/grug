@@ -48,7 +48,7 @@ i: number = 0
 # All code in member scope runs when the entity is created.
 while i < 3 {
     # This play_sound() host function is declared by mod_api.json.
-    # r"" is a resource string, which validates that `mods/cheats/sounds/activation.mp3` exists.
+    # r"" is a resource string, validating that `mods/cheats/sounds/activation.mp3` exists.
     # grug watches the mods directory so any file can be hot reloaded.
     # Resource strings deliberately can't refer to resources in other mods.
     play_sound(r"sounds/activation.mp3")
