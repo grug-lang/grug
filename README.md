@@ -89,7 +89,7 @@ local _heal_player(player: Player) {
 
     # pos() returns Pos.
     # e"" is an entity string, which validates that `sparkle-Entity.grug`
-    # exists somewhere in mods/vanilla/.
+    # exists somewhere in `mods/vanilla/`.
     # spawn() declares it expects an Entity, but grug permits subtypes like Particle.
     # Removing the `vanilla:` prefix restricts the search to this grug file's mod.
     player.pos().spawn(e"vanilla:sparkle")
