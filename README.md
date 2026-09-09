@@ -49,7 +49,7 @@ i: number = 0
 while i < 3 {
     # This play_sound() host function is declared by mod_api.json.
     # r"" is a resource string, which validates that `mods/cheats/sounds/activation.mp3` exists.
-    # The host watches the entire mods directory, so changes to any file are automatically hot reloaded.
+    # The host watches the mods directory and hot reloads changes to any file.
     # Resource strings deliberately can't refer to resources in other mods.
     play_sound(r"sounds/activation.mp3")
 
